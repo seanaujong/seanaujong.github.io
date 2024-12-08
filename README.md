@@ -9,7 +9,13 @@
 
 ## Useful commands
 
-> See [Jekyll Compose](https://github.com/jekyll/jekyll-compose).
+Run local server:
+
+```shell
+bundle exec jekyll s
+```
+
+### Jekyll [Compose](https://github.com/jekyll/jekyll-compose)
 
 Make a new post:
 
