@@ -14,7 +14,7 @@ timezone: America/Chicago
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Bro in Tech # the main title
+title: Persimmon Dev # the main title
 
 tagline: By Sean Au Jong # it will display as the subtitle
 
@@ -98,7 +98,7 @@ theme_mode: dark # [light | dark]
 cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar: https://media.licdn.com/dms/image/v2/C4E03AQE3IvBiejxOoA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1567878366741?e=1738800000&v=beta&t=EIWNU6wpdqwwNcjfXwoVizpXWT4_H_h5xLOyTa7MkJ0
+avatar: https://images.pexels.com/photos/28382809/pexels-photo-28382809/free-photo-of-persimmon-fruit.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
