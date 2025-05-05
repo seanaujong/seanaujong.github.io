@@ -137,14 +137,14 @@ I'll use the `mockk` library this time - `mockk<WeatherApi>()` automagically cre
 
 ```kotlin
 @ExperimentalCoroutinesApi
-class WeatherRepositoryTest {
+class WeatherForecasterTest {
 
     private val weatherApi = mockk<WeatherApi>()
-    private lateinit var repository: WeatherRepository
+    private lateinit var forecaster: WeatherForecaster
 
     @Before
     fun setup() {
-        repository = WeatherRepository(weatherApi)
+        forecaster = WeatherForecaster(weatherApi)
     }
 
     @Test
@@ -152,7 +152,7 @@ class WeatherRepositoryTest {
         val hotWeather = WeatherResponse(temperatureCelsius = 35.0)
         coEvery { weatherApi.getCurrentWeather() } returns hotWeather
 
-        val result = repository.isHotToday()
+        val result = forecaster.isHotToday()
 
         assertTrue(result)
         coVerify(exactly = 1) { weatherApi.getCurrentWeather() }
@@ -163,7 +163,7 @@ class WeatherRepositoryTest {
         val coolWeather = WeatherResponse(temperatureCelsius = 25.0)
         coEvery { weatherApi.getCurrentWeather() } returns coolWeather
 
-        val result = repository.isHotToday()
+        val result = forecaster.isHotToday()
 
         assertFalse(result)
         coVerify(exactly = 1) { weatherApi.getCurrentWeather() }
@@ -173,7 +173,7 @@ class WeatherRepositoryTest {
     fun `isHotToday returns false when API throws exception`() = runTest {
         coEvery { weatherApi.getCurrentWeather() } throws IOException("No network")
 
-        val result = repository.isHotToday()
+        val result = forecaster.isHotToday()
 
         assertFalse(result)
         coVerify(exactly = 1) { weatherApi.getCurrentWeather() }
